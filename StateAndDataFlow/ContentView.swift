@@ -22,8 +22,8 @@ struct ContentView: View {
             Spacer()
             
             ButtonView(timer: timer)
+                .padding(.bottom, 16)
         }
-        .padding()
     }
 }
 
