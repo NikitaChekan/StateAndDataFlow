@@ -11,6 +11,7 @@ struct RegisterView: View {
     @State private var name = ""
     @State private var counter = 0
     @State private var color = Color.red
+    @State private var buttonColor = Color.gray
     @EnvironmentObject private var userManager: UserManager
     
     var body: some View {
@@ -35,6 +36,17 @@ struct RegisterView: View {
                 HStack {
                     Image(systemName: "checkmark.circle")
                     Text("ОК")
+                }
+                .foregroundColor(buttonColor)
+                .onChange(of: name.count) { value in
+                    counter = value
+                    
+                    switch value {
+                    case 0..<3:
+                        buttonColor = .gray
+                    default:
+                        buttonColor = .blue
+                    }
                 }
                 .padding()
             }
