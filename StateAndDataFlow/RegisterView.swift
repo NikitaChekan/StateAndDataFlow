@@ -10,6 +10,7 @@ import SwiftUI
 struct RegisterView: View {
     @State private var name = ""
     @State private var counter = 0
+    @State private var color = Color.red
     @EnvironmentObject private var userManager: UserManager
     
     var body: some View {
@@ -17,11 +18,18 @@ struct RegisterView: View {
             HStack {
                 TextField("Enter your name...", text: $name)
                     .multilineTextAlignment(.center)
+                Text(counter.formatted())
+                    .foregroundColor(color)
                     .onChange(of: name.count) { value in
                         counter = value
+                        
+                        switch value {
+                        case 0..<3:
+                            color = .red
+                        default:
+                            color = .green
+                        }
                     }
-                Text(counter.formatted())
-                    .foregroundColor(.red)
             }
             Button(action: registerUser) {
                 HStack {
