@@ -11,7 +11,7 @@ struct RegisterView: View {
     @State private var name = ""
     @State private var counter = 0
     @State private var color = Color.red
-    @State private var buttonColor = Color.gray
+    @State private var agreedToTerms = true
     @EnvironmentObject private var userManager: UserManager
     
     var body: some View {
@@ -27,8 +27,10 @@ struct RegisterView: View {
                         switch value {
                         case 0..<3:
                             color = .red
+                            agreedToTerms = true
                         default:
                             color = .green
+                            agreedToTerms = false
                         }
                     }
             }
@@ -37,17 +39,7 @@ struct RegisterView: View {
                     Image(systemName: "checkmark.circle")
                     Text("ОК")
                 }
-                .foregroundColor(buttonColor)
-                .onChange(of: name.count) { value in
-                    counter = value
-                    
-                    switch value {
-                    case 0..<3:
-                        buttonColor = .gray
-                    default:
-                        buttonColor = .blue
-                    }
-                }
+                .disabled(agreedToTerms)
                 .padding()
             }
         }
@@ -55,7 +47,7 @@ struct RegisterView: View {
     }
     
     private func registerUser() {
-        if !name.isEmpty, name.count > 3 {
+        if !name.isEmpty, name.count >= 3 {
             userManager.name = name
             userManager.isRegister.toggle()
         }
