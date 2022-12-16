@@ -5,9 +5,9 @@
 //  Created by Nikita Chekan on 14.12.2022.
 //
 
-import Foundation
+import SwiftUI
 
 class UserManager: ObservableObject {
     @Published var isRegister = false
-    var name = ""
+    @AppStorage("name") var name = ""
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA5BBADE294CA9340085C8D0 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BBADD294CA9340085C8D0 /* CustomButtonView.swift */; };
 		DAF49468294A4288005D7ECB /* StateAndDataFlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF49467294A4288005D7ECB /* StateAndDataFlowApp.swift */; };
 		DAF4946A294A4288005D7ECB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF49469294A4288005D7ECB /* ContentView.swift */; };
 		DAF4946C294A428E005D7ECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAF4946B294A428E005D7ECB /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA5BBADD294CA9340085C8D0 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		DAF49464294A4288005D7ECB /* StateAndDataFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StateAndDataFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF49467294A4288005D7ECB /* StateAndDataFlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateAndDataFlowApp.swift; sourceTree = "<group>"; };
 		DAF49469294A4288005D7ECB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				DAF49467294A4288005D7ECB /* StateAndDataFlowApp.swift */,
 				DAF4947B294A5314005D7ECB /* StarterView.swift */,
 				DAF49469294A4288005D7ECB /* ContentView.swift */,
+				DA5BBADD294CA9340085C8D0 /* CustomButtonView.swift */,
 				DAF49475294A47D5005D7ECB /* TimeCounter.swift */,
 				DAF49477294A4F40005D7ECB /* RegisterView.swift */,
 				DAF49479294A5028005D7ECB /* UserManager.swift */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA5BBADE294CA9340085C8D0 /* CustomButtonView.swift in Sources */,
 				DAF49476294A47D5005D7ECB /* TimeCounter.swift in Sources */,
 				DAF49478294A4F40005D7ECB /* RegisterView.swift in Sources */,
 				DAF4947C294A5314005D7ECB /* StarterView.swift in Sources */,

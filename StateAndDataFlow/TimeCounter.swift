@@ -50,7 +50,7 @@ class TimeCounter: ObservableObject {
     }
     
     private func killTimer() {
-        timer?.invalidate() /// Остановка таймера
-        timer = nil /// Выгрузка из памяти
+        timer?.invalidate()
+        timer = nil
     }
 }
