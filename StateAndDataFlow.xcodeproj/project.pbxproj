@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DA5BBADE294CA9340085C8D0 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BBADD294CA9340085C8D0 /* CustomButtonView.swift */; };
+		DAD718C5294DE2C1000E0FF6 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD718C4294DE2C1000E0FF6 /* StorageManager.swift */; };
 		DAF49468294A4288005D7ECB /* StateAndDataFlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF49467294A4288005D7ECB /* StateAndDataFlowApp.swift */; };
 		DAF4946A294A4288005D7ECB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF49469294A4288005D7ECB /* ContentView.swift */; };
 		DAF4946C294A428E005D7ECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAF4946B294A428E005D7ECB /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		DA5BBADD294CA9340085C8D0 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
+		DAD718C4294DE2C1000E0FF6 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		DAF49464294A4288005D7ECB /* StateAndDataFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StateAndDataFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF49467294A4288005D7ECB /* StateAndDataFlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateAndDataFlowApp.swift; sourceTree = "<group>"; };
 		DAF49469294A4288005D7ECB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +44,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DAD718C1294DE079000E0FF6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DAF49479294A5028005D7ECB /* UserManager.swift */,
+				DAD718C4294DE2C1000E0FF6 /* StorageManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DAD718C2294DE1AA000E0FF6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DAF4947B294A5314005D7ECB /* StarterView.swift */,
+				DAF49477294A4F40005D7ECB /* RegisterView.swift */,
+				DAF49469294A4288005D7ECB /* ContentView.swift */,
+				DAD718C3294DE1B9000E0FF6 /* Helpers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DAD718C3294DE1B9000E0FF6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DA5BBADD294CA9340085C8D0 /* CustomButtonView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		DAF4945B294A4288005D7ECB = {
 			isa = PBXGroup;
 			children = (
@@ -62,12 +92,9 @@
 			isa = PBXGroup;
 			children = (
 				DAF49467294A4288005D7ECB /* StateAndDataFlowApp.swift */,
-				DAF4947B294A5314005D7ECB /* StarterView.swift */,
-				DAF49469294A4288005D7ECB /* ContentView.swift */,
-				DA5BBADD294CA9340085C8D0 /* CustomButtonView.swift */,
 				DAF49475294A47D5005D7ECB /* TimeCounter.swift */,
-				DAF49477294A4F40005D7ECB /* RegisterView.swift */,
-				DAF49479294A5028005D7ECB /* UserManager.swift */,
+				DAD718C2294DE1AA000E0FF6 /* Views */,
+				DAD718C1294DE079000E0FF6 /* Services */,
 				DAF4946B294A428E005D7ECB /* Assets.xcassets */,
 				DAF4946D294A428E005D7ECB /* Preview Content */,
 			);
@@ -159,6 +186,7 @@
 				DAF4946A294A4288005D7ECB /* ContentView.swift in Sources */,
 				DAF4947A294A5028005D7ECB /* UserManager.swift in Sources */,
 				DAF49468294A4288005D7ECB /* StateAndDataFlowApp.swift in Sources */,
+				DAD718C5294DE2C1000E0FF6 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
