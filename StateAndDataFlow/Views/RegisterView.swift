@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct RegisterView: View {
+    @EnvironmentObject private var userManager: UserManager
     @State private var name = ""
     @State private var counter = 0
     @State private var color = Color.red
     @State private var agreedToTerms = true
 
-    @EnvironmentObject private var userManager: UserManager
     private var storageManager = StorageManager()
     
     var body: some View {
@@ -36,13 +36,14 @@ struct RegisterView: View {
                         }
                     }
             }
+            .padding()
+            
             Button(action: registerUser) {
                 HStack {
                     Image(systemName: "checkmark.circle")
                     Text("ОК")
                 }
                 .disabled(agreedToTerms)
-                .padding()
             }
         }
         .padding()

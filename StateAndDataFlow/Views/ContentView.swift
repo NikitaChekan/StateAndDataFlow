@@ -11,6 +11,8 @@ struct ContentView: View {
     @StateObject private var timer = TimeCounter()
     @EnvironmentObject private var userManager: UserManager
     
+    private var storageManager = StorageManager()
+    
     var body: some View {
         VStack {
             Text("Hi, \(userManager.name)")
@@ -41,7 +43,8 @@ struct ContentView: View {
     }
     
     private func logOut() {
-        userManager.name = ""
+        storageManager.name = ""
+        userManager.name = storageManager.name
     }
 }
 
