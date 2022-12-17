@@ -5,4 +5,8 @@
 //  Created by Nikita Chekan on 17.12.2022.
 //
 
-import Foundation
+import SwiftUI
+
+class StorageManager {
+    @AppStorage("name") var name = ""
+}

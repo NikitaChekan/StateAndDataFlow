@@ -12,7 +12,9 @@ struct RegisterView: View {
     @State private var counter = 0
     @State private var color = Color.red
     @State private var agreedToTerms = true
+
     @EnvironmentObject private var userManager: UserManager
+    private var storageManager = StorageManager()
     
     var body: some View {
         VStack {
@@ -48,8 +50,8 @@ struct RegisterView: View {
     
     private func registerUser() {
         if !name.isEmpty, name.count >= 3 {
-            userManager.name = name
-            userManager.isRegister.toggle()
+            storageManager.name = name
+            userManager.name = storageManager.name
         }
     }
 }

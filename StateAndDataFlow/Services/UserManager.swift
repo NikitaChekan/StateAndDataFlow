@@ -8,6 +8,7 @@
 import SwiftUI
 
 class UserManager: ObservableObject {
-    @Published var isRegister = false
-    @AppStorage("name") var name = ""
+    //    @Published var isRegister = false
+    //    @AppStorage("name") var name = ""
+    @Published var name = StorageManager().name
 }

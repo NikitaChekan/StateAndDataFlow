@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct CustomButtonView: View {
-//    @ObservedObject var timer: TimeCounter
-    @Binding var text: String
-    @Binding var color: Color
-    var action: () -> Void
+    let text: String
+    let color: Color
+    let action: () -> Void
     
     var body: some View {
         Button(action: action) {
@@ -31,8 +30,8 @@ struct CustomButtonView: View {
 struct CustomButtonView_Previews: PreviewProvider {
     static var previews: some View {
         CustomButtonView(
-            text: .constant("JUST DO IT"),
-            color: .constant(.green),
+            text: "JUST DO IT",
+            color: .green,
             action: {}
         )
     }

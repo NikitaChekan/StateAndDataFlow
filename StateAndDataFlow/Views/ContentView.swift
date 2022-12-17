@@ -22,8 +22,8 @@ struct ContentView: View {
             Spacer()
             
             CustomButtonView(
-                text: .constant(timer.buttonTitle),
-                color: .constant(.red),
+                text: timer.buttonTitle,
+                color: .red,
                 action: timer.startTimer
             )
             .padding(.bottom, 16)
@@ -31,8 +31,8 @@ struct ContentView: View {
             Spacer()
             
             CustomButtonView(
-                text: .constant("LogOut"),
-                color: .constant(.blue),
+                text: "LogOut",
+                color: .blue,
                 action: logOut
             )
             .padding(.bottom, 16)
