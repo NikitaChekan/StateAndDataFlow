@@ -11,11 +11,9 @@ struct ContentView: View {
     @StateObject private var timer = TimeCounter()
     @EnvironmentObject private var userManager: UserManager
     
-    private var storageManager = DataManager()
-    
     var body: some View {
         VStack {
-            Text("Hi, \(userManager.name)")
+            Text("Hi, \(userManager.user.name)")
                 .font(.largeTitle)
                 .padding(.top, 100)
             Text(timer.counter.formatted())
@@ -32,19 +30,13 @@ struct ContentView: View {
             
             Spacer()
             
-            CustomButtonView(
-                text: "LogOut",
-                color: .blue,
-                action: logOut
-            )
+            CustomButtonView(text: "LogOut", color: .blue) {
+                DataManager.shared.clear(userManager: userManager)
+            }
+            
             .padding(.bottom, 16)
             
         }
-    }
-    
-    private func logOut() {
-        storageManager.name = ""
-        userManager.name = storageManager.name
     }
 }
 

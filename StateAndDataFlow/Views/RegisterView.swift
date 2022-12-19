@@ -8,51 +8,50 @@
 import SwiftUI
 
 struct RegisterView: View {
+    
     @EnvironmentObject private var userManager: UserManager
-    @State private var name = ""
-    @State private var counter = 0
-    @State private var color = Color.red
-    @State private var agreedToTerms = true
-
-    private var storageManager = DataManager()
     
     var body: some View {
         VStack {
-            HStack {
-                TextField("Enter your name...", text: $name)
-                    .multilineTextAlignment(.center)
-                Text(counter.formatted())
-                    .foregroundColor(color)
-                    .onChange(of: name.count) { value in
-                        counter = value
-                        
-                        switch value {
-                        case 0..<3:
-                            color = .red
-                            agreedToTerms = true
-                        default:
-                            color = .green
-                            agreedToTerms = false
-                        }
-                    }
-            }
-            .padding()
+            UserNameTF(
+                name: $userManager.user.name,
+                nameIsValid: userManager.nameIsValid
+            )
             
             Button(action: registerUser) {
                 HStack {
                     Image(systemName: "checkmark.circle")
                     Text("ОК")
                 }
-                .disabled(agreedToTerms)
             }
+            .disabled(!userManager.nameIsValid)
         }
         .padding()
     }
     
     private func registerUser() {
-        if !name.isEmpty, name.count >= 3 {
-            storageManager.name = name
-            userManager.name = storageManager.name
+        userManager.user.isRegistered.toggle()
+        DataManager.shared.save(user: userManager.user)
+    }
+}
+    
+struct UserNameTF: View {
+    
+    @Binding var name: String
+    var nameIsValid = false
+    
+    var body: some View {
+        ZStack {
+            TextField("Type your name...", text: $name)
+                .multilineTextAlignment(.center)
+            HStack {
+                Spacer()
+                Text(name.count.formatted())
+                    .font(.callout)
+                    .foregroundColor(nameIsValid ? .green : .red)
+                    .padding([.top, .trailing])
+            }
+            .padding(.bottom)
         }
     }
 }
@@ -60,5 +59,6 @@ struct RegisterView: View {
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterView()
+            .environmentObject(UserManager())
     }
 }
