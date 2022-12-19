@@ -14,7 +14,7 @@ struct RegisterView: View {
     @State private var color = Color.red
     @State private var agreedToTerms = true
 
-    private var storageManager = StorageManager()
+    private var storageManager = DataManager()
     
     var body: some View {
         VStack {

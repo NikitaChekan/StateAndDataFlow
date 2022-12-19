@@ -11,7 +11,7 @@ struct ContentView: View {
     @StateObject private var timer = TimeCounter()
     @EnvironmentObject private var userManager: UserManager
     
-    private var storageManager = StorageManager()
+    private var storageManager = DataManager()
     
     var body: some View {
         VStack {
